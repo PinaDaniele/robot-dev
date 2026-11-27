@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches:[main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Lint shell scripts
+        run: find . -type f -name "*.sh" -exec shellcheck {} +
+      - name: Build the container image
+        run: docker build -t robot-dev
