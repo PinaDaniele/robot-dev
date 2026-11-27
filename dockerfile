@@ -1,7 +1,7 @@
 FROM ros:jazzy
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git python3-serial socat \
+    && apt-get install -y --no-install-recommends git python3-serial socat tmux \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /ws
