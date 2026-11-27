@@ -13,4 +13,4 @@ jobs:
       - name: Lint shell scripts
         run: find . -type f -name "*.sh" -exec shellcheck {} +
       - name: Build the container image
-        run: docker build -t robot-dev
+        run: docker build -t robot-dev .
